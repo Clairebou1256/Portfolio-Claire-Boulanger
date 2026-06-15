@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Boulanger — Marketing, Brand & Sponsorship Leader</title>
+  <meta name="description" content="Portfolio de Claire Boulanger, Marketing Brand & Sponsorship Leader — 20 ans d'expérience dans le marketing sportif." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #F9F7F4;
+      --white:    #FFFFFF;
+      --offwhite: #F2EFE9;
+      --border:   #E4DDD5;
+      --dark:     #1A1714;
+      --mid:      #5C5550;
+      --light:    #9A928A;
+      --copper:   #B54E1F;
+      --copper-l: #D4723E;
+      --copper-bg:#FCF0EA;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── LANG BAR ── */
+    #lang-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 999;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 48px;
+      height: 56px;
+      background: rgba(249,247,244,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 500;
+      color: var(--dark); letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+    }
+    .nav-link {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      color: var(--mid); text-transform: uppercase;
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-link:hover { color: var(--copper); }
+    .nav-sep { color: var(--border); font-size: 14px; }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--light);
+      transition: color .2s; padding: 0;
+    }
+    .lang-btn.active { color: var(--copper); }
+    .lang-btn:hover { color: var(--copper); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      padding: 80px 48px 80px 8vw;
+      gap: 80px;
+      background: var(--cream);
+    }
+
+    .hero-left { max-width: 600px; }
+
+    .hero-overline {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+      color: var(--copper); text-transform: uppercase;
+      margin-bottom: 28px; display: flex; align-items: center; gap: 12px;
+    }
+    .hero-overline::after {
+      content: ''; flex: 1; max-width: 40px;
+      height: 1px; background: var(--copper);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 300; line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .hero-name strong {
+      font-weight: 600; display: inline;
+    }
+
+    .hero-title {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.12em;
+      color: var(--mid); text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 400; line-height: 1.55;
+      color: var(--mid);
+      border-left: 2px solid var(--copper);
+      padding-left: 24px;
+      margin-bottom: 44px;
+    }
+
+    .hero-cta {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 14px 28px; transition: all .25s; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--dark); color: var(--white); border: none;
+    }
+    .btn-primary:hover { background: var(--copper); }
+    .btn-outline {
+      background: transparent; color: var(--dark);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--dark); }
+
+    /* hero stats */
+    .hero-stats {
+      display: flex; gap: 0;
+      margin-top: 56px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {
+      flex: 1; padding-right: 32px;
+      border-right: 1px solid var(--border);
+      margin-right: 32px;
+    }
+    .stat-item:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px; font-weight: 700; line-height: 1;
+      color: var(--copper);
+    }
+    .stat-label {
+      font-size: 11px; color: var(--dark); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-top: 6px;
+      font-weight: 700;
+    }
+
+    /* hero photo */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 0;
+    }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute; top: 48px; right: -20px; bottom: 0; left: 48px;
+      background: var(--offwhite);
+      border: 1px solid var(--border);
+      z-index: 0;
+    }
+    .hero-photo {
+      position: relative; z-index: 1;
+      width: 320px; height: 400px;
+      object-fit: cover; object-position: center 15%;
+      display: block;
+    }
+    .hero-photo-placeholder {
+      position: relative; z-index: 1;
+      width: 320px; height: 400px;
+      background: var(--offwhite);
+      border: 1px dashed var(--border);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; color: var(--light);
+      font-size: 13px; text-align: center; padding: 24px;
+    }
+    .hero-photo-placeholder span { font-size: 40px; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 8vw; }
+    .section-overline {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+      color: var(--copper); text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-overline::after {
+      content: ''; width: 32px; height: 1px; background: var(--copper);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 60px); font-weight: 300;
+      line-height: 1.05; margin-bottom: 60px; color: var(--dark);
+    }
+    .section-title em { font-style: italic; font-weight: 400; }
+
+    /* ── EXPERTISE ── */
+    #expertise { background: var(--dark); }
+    #expertise .section-overline { color: var(--copper); }
+    #expertise .section-overline::after { background: var(--copper); }
+    #expertise .section-title { color: var(--white); }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #2a2520;
+      border: 1px solid #2a2520;
+    }
+    .expertise-card {
+      background: #211e1a;
+      padding: 40px 36px;
+      transition: background .2s;
+    }
+    .expertise-card:hover { background: #2a2520; }
+    .expertise-icon {
+      font-size: 28px; margin-bottom: 20px; display: block;
+    }
+    .expertise-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 500;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .expertise-card p {
+      font-size: 13px; color: #9A928A; line-height: 1.75;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--white); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0;
+      position: relative; overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .project-img {
+      width: 100%; height: 220px;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .project-img-placeholder {
+      width: 100%; height: 220px;
+      background: var(--offwhite);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--light); letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .project-body {
+      padding: 32px 32px 28px;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--copper);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .project-card:hover::after { transform: scaleX(1); }
+    .project-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      transform: translateY(-4px);
+    }
+    .project-emoji { font-size: 36px; margin-bottom: 20px; display: block; }
+    .project-year {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--copper); margin-bottom: 10px;
+    }
+    .project-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 500; line-height: 1.15;
+      margin-bottom: 16px; color: var(--dark);
+    }
+    .project-card p {
+      font-size: 13px; color: var(--mid); line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 5px 10px;
+      background: var(--cream); border: 1px solid var(--border);
+      color: var(--mid);
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--cream); }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 40px; padding: 44px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-date {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+      color: var(--copper); padding-top: 4px; text-transform: uppercase;
+    }
+    .exp-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 500;
+      color: var(--dark); margin-bottom: 4px;
+    }
+    .exp-company {
+      font-size: 12px; color: var(--light); margin-bottom: 18px;
+      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+    }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li {
+      font-size: 13px; color: var(--mid); line-height: 1.75;
+      padding-left: 18px; position: relative; margin-bottom: 6px;
+    }
+    .exp-bullets li::before {
+      content: '–'; position: absolute; left: 0;
+      color: var(--copper);
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--dark); }
+    #skills .section-overline { color: var(--copper); }
+    #skills .section-overline::after { background: var(--copper); }
+    #skills .section-title { color: var(--white); }
+    #skills .skill-group h3 { color: var(--copper); border-bottom-color: #2a2520; }
+    #skills .skill-group li { color: #bbb; border-bottom-color: #2a2520; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+    .skill-group h3 {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--copper);
+      margin-bottom: 20px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-group ul { list-style: none; }
+    .skill-group li {
+      font-size: 13px; color: var(--mid);
+      padding: 8px 0; border-bottom: 1px solid var(--offwhite);
+      line-height: 1.5;
+    }
+    .skill-group li:last-child { border-bottom: none; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--copper);
+      padding: 80px 8vw;
+    }
+    #contact .section-overline { color: rgba(255,255,255,0.6); }
+    #contact .section-overline::after { background: rgba(255,255,255,0.4); }
+    #contact .section-title { color: var(--white); }
+    #contact .contact-sub { color: rgba(255,255,255,0.8); }
+    #contact .contact-links { border-color: rgba(255,255,255,0.25); }
+    #contact .contact-item { color: rgba(255,255,255,0.9); border-right-color: rgba(255,255,255,0.25); }
+    #contact .contact-item:hover { color: var(--white); background: rgba(0,0,0,0.1); }
+    #contact .section-overline { color: var(--copper); }
+    #contact .section-overline::after { background: var(--copper); }
+    #contact .section-title { color: var(--white); margin-bottom: 16px; }
+    .contact-sub {
+      font-size: 15px; color: #888; max-width: 500px; margin-bottom: 48px; line-height: 1.7;
+    }
+    .contact-links {
+      display: flex; gap: 0; flex-wrap: wrap;
+      border: 1px solid #2a2a2a;
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; font-weight: 400; letter-spacing: 0.03em;
+      color: #bbb; text-decoration: none;
+      padding: 20px 32px;
+      border-right: 1px solid #2a2a2a;
+      transition: color .2s, background .2s;
+    }
+    .contact-item:last-child { border-right: none; }
+    .contact-item:hover { color: var(--white); background: #222; }
+    .contact-item span { font-size: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      text-align: center;
+      padding: 20px;
+      font-size: 11px; color: #555;
+      border-top: 1px solid #2a2520;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── LANG TOGGLE ── */
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="fr"] { display: none; }
+    body.en [data-lang="en"] { display: revert; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 100px 6vw 60px;
+        gap: 48px;
+      }
+      .hero-photo-wrap { order: -1; max-height: 360px; }
+      .hero-photo, .hero-photo-placeholder { height: 360px; }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .exp-item { grid-template-columns: 1fr; gap: 8px; }
+      .contact-links { flex-direction: column; }
+      .contact-item { border-right: none; border-bottom: 1px solid #2a2a2a; }
+      .contact-item:last-child { border-bottom: none; }
+      #lang-bar { padding: 0 24px; }
+    }
+    @media (max-width: 640px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 24px; }
+      .stat-item { border-right: none; padding-right: 0; margin-right: 0; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .nav-links .nav-link:not(.lang-btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="lang-bar">
+    <span class="nav-name">Claire Boulanger</span>
+    <div class="nav-links">
+      <a href="#expertise" class="nav-link" data-lang="fr">Expertise</a>
+      <a href="#expertise" class="nav-link" data-lang="en">Expertise</a>
+      <a href="#projects" class="nav-link" data-lang="fr">Projets</a>
+      <a href="#projects" class="nav-link" data-lang="en">Projects</a>
+      <a href="#experience" class="nav-link" data-lang="fr">Parcours</a>
+      <a href="#experience" class="nav-link" data-lang="en">Career</a>
+      <a href="#contact" class="nav-link" data-lang="fr">Contact</a>
+      <a href="#contact" class="nav-link" data-lang="en">Contact</a>
+      <span class="nav-sep">|</span>
+      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+      <span style="color:var(--border);font-size:11px;">/</span>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ══════ HERO ══════ -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-overline" data-lang="fr">Marketing Sportif · Portfolio</p>
+      <p class="hero-overline" data-lang="en">Sports Marketing · Portfolio</p>
+
+      <h1 class="hero-name">Claire <strong>Boulanger</strong></h1>
+
+      <p class="hero-title" data-lang="fr">Marketing, Brand &amp; Sponsorship Leader · Sport &amp; Lifestyle</p>
+      <p class="hero-title" data-lang="en">Marketing, Brand &amp; Sponsorship Leader · Sport &amp; Lifestyle</p>
+
+      <p class="hero-tagline" data-lang="fr">
+        20 ans d'expérience, du marketing terrain à la direction stratégique, à connecter marques de sport et consommateurs — prête pour le prochain défi.
+      </p>
+      <p class="hero-tagline" data-lang="en">
+        20 years of experience, from hands-on marketing to strategic leadership, connecting sports brands with their consumers — ready for the next challenge.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-lang="fr">Me contacter</a>
+        <a href="#contact" class="btn btn-primary" data-lang="en">Get in touch</a>
+        <a href="https://www.linkedin.com/in/claire-boulanger-marketing/" target="_blank" class="btn btn-outline">LinkedIn →</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">20</div>
+          <div class="stat-label" data-lang="fr">Ans d'expérience</div>
+          <div class="stat-label" data-lang="en">Years of experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">×3</div>
+          <div class="stat-label" data-lang="fr">Croissance business<br />2020–2025</div>
+          <div class="stat-label" data-lang="en">Business growth<br />2020–2025</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12</div>
+          <div class="stat-label" data-lang="fr">Personnes managées</div>
+          <div class="stat-label" data-lang="en">People managed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">+5</div>
+          <div class="stat-label" data-lang="fr">pts de notoriété<br />spontanée en 5 ans</div>
+          <div class="stat-label" data-lang="en">pts spontaneous<br />brand awareness in 5 yrs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <img src="photo.jpg.png" alt="Claire Boulanger" class="hero-photo" id="portrait"
+           onerror="this.style.display='none';document.getElementById('photo-placeholder').style.display='flex';" />
+      <div class="hero-photo-placeholder" id="photo-placeholder" style="display:none;">
+        <span>📷</span>
+        <p data-lang="fr">Copie ta photo dans le dossier Portfolio<br />et renomme-la <strong>photo.jpg</strong></p>
+        <p data-lang="en">Copy your photo to the Portfolio folder<br />and rename it <strong>photo.jpg</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ EXPERTISE ══════ -->
+  <section id="expertise">
+    <p class="section-overline" data-lang="fr">Ce que j'apporte</p>
+    <p class="section-overline" data-lang="en">What I bring</p>
+    <h2 class="section-title" data-lang="fr">Expertise <em>stratégique</em></h2>
+    <h2 class="section-title" data-lang="en">Strategic <em>expertise</em></h2>
+
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <span class="expertise-icon">🎯</span>
+        <h3 data-lang="fr">Stratégie de marque</h3>
+        <h3 data-lang="en">Brand strategy</h3>
+        <p data-lang="fr">Construction et déploiement de stratégies marketing omnicanales sur le long terme, avec un ancrage fort dans l'univers du sport et du lifestyle.</p>
+        <p data-lang="en">Building and deploying long-term omnichannel marketing strategies, deeply rooted in sports and lifestyle culture.</p>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">🤝</span>
+        <h3 data-lang="fr">Partenariats &amp; sponsoring</h3>
+        <h3 data-lang="en">Partnerships &amp; sponsorship</h3>
+        <p data-lang="fr">Négociation, activation et gestion de partenariats avec des événements running emblématiques (20km de Paris, Marseille-Cassis, Marathon du Mont-Blanc, Eco-Trail de Paris), des clubs professionnels (LOSC) et des athlètes ambassadeurs.</p>
+        <p data-lang="en">Negotiating, activating and managing partnerships with iconic running events (20km de Paris, Marseille-Cassis, Mont-Blanc Marathon, Eco-Trail de Paris), professional clubs (LOSC) and athlete ambassadors.</p>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">📢</span>
+        <h3 data-lang="fr">Campagnes &amp; médias</h3>
+        <h3 data-lang="en">Campaigns &amp; media</h3>
+        <p data-lang="fr">Conception et pilotage de campagnes earned &amp; paid à fort impact, de la définition du plan média à la mesure de performance.</p>
+        <p data-lang="en">Designing and driving high-impact earned &amp; paid campaigns, from media plan definition to performance measurement.</p>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">👥</span>
+        <h3 data-lang="fr">Leadership &amp; management</h3>
+        <h3 data-lang="en">Leadership &amp; management</h3>
+        <p data-lang="fr">Management d'équipes jusqu'à 12 personnes en contexte de forte croissance. Budget (en M€) ×15 sur la période, avec report direct au Country Manager France.</p>
+        <p data-lang="en">Team management up to 12 people in a high-growth context. Budget (in M€) ×15 over the period, with direct report to France Country Manager.</p>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">🛒</span>
+        <h3 data-lang="fr">Trade marketing</h3>
+        <h3 data-lang="en">Trade marketing</h3>
+        <p data-lang="fr">Développement de plans trade marketing omnicanal pour les clients stratégiques lifestyle et performance.</p>
+        <p data-lang="en">Developing omnichannel trade marketing plans for strategic lifestyle and performance accounts.</p>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">🏅</span>
+        <h3 data-lang="fr">Événementiel sportif</h3>
+        <h3 data-lang="en">Sports events</h3>
+        <p data-lang="fr">De la coordination de l'hospitality NB aux JOP 2024 à l'activation de partenariats mythiques (Marathon de NYC…) : expertise complète de l'événementiel sport.</p>
+        <p data-lang="en">From coordinating NB hospitality at Paris 2024 Olympics to activating iconic partnerships (NYC Marathon…): full sports event expertise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PROJECTS ══════ -->
+  <section id="projects">
+    <p class="section-overline" data-lang="fr">Réalisations phares</p>
+    <p class="section-overline" data-lang="en">Featured projects</p>
+    <h2 class="section-title" data-lang="fr">3 Projets <em>emblématiques</em></h2>
+    <h2 class="section-title" data-lang="en">3 <em>landmark</em> projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="project-jo2024.jpg.jpg" alt="JOP Paris 2024" class="project-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="project-img-placeholder" style="display:none;">project-jo2024.jpg</div>
+        <div class="project-body">
+          <span class="project-emoji">🏅</span>
+          <p class="project-year">Paris 2024</p>
+          <h3 data-lang="fr">Hospitality<br />JOP Paris 2024</h3>
+          <h3 data-lang="en">Paris 2024<br />Olympics Hospitality</h3>
+          <p data-lang="fr">Coordination de l'ensemble du dispositif hospitality New Balance lors des Jeux Olympiques et Paralympiques de Paris 2024. Orchestration d'une expérience de marque premium pour les partenaires, athlètes et invités VIP dans le contexte événementiel le plus exigeant au monde.</p>
+          <p data-lang="en">Coordination of New Balance's full hospitality program at the Paris 2024 Olympic and Paralympic Games. Orchestrated a premium brand experience for partners, athletes and VIP guests in the world's most demanding event context.</p>
+          <div class="project-tags">
+            <span class="tag">JOP 2024</span>
+            <span class="tag">Brand experience</span>
+            <span class="tag">VIP Hospitality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="project-runyourway.jpg.jpg" alt="NB Run Your Way" class="project-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="project-img-placeholder" style="display:none;">project-runyourway.jpg</div>
+        <div class="project-body">
+          <span class="project-emoji">👟</span>
+          <p class="project-year" data-lang="fr">Campagne nationale</p>
+          <p class="project-year" data-lang="en">National campaign</p>
+          <h3>NB<br />Run Your Way</h3>
+          <p data-lang="fr">Lancement et déploiement de la campagne "Run Your Way" en France — brand building ancrant New Balance dans la culture run avec un positionnement différenciant. Plan média 360° (earned &amp; paid), activation digitale et retail.</p>
+          <p data-lang="en">Launch and rollout of the "Run Your Way" campaign in France — brand building anchoring New Balance in run culture with a differentiating positioning. 360° media plan (earned &amp; paid), digital and retail activation.</p>
+          <div class="project-tags">
+            <span class="tag" data-lang="fr">Lancement campagne</span>
+            <span class="tag" data-lang="en">Campaign launch</span>
+            <span class="tag">Media 360°</span>
+            <span class="tag">Brand building</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="project-losc.jpg.jpg" alt="Partenariat LOSC" class="project-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="project-img-placeholder" style="display:none;">project-losc.jpg</div>
+        <div class="project-body">
+          <span class="project-emoji">⚽</span>
+          <p class="project-year" data-lang="fr">Partenariat football</p>
+          <p class="project-year" data-lang="en">Football partnership</p>
+          <h3 data-lang="fr">Partenariat<br />LOSC</h3>
+          <h3 data-lang="en">LOSC<br />Partnership</h3>
+          <p data-lang="fr">Définition et mise en œuvre du partenariat New Balance × LOSC. Négociation, structuration des activations, management des droits marketing et exploitation des synergies pour maximiser la visibilité et l'impact commercial en France.</p>
+          <p data-lang="en">Definition and implementation of the New Balance × LOSC partnership. Negotiation, activation structuring, marketing rights management and exploitation of synergies to maximise visibility and commercial impact in France.</p>
+          <div class="project-tags">
+            <span class="tag">LOSC</span>
+            <span class="tag">Football</span>
+            <span class="tag" data-lang="fr">Sponsoring</span>
+            <span class="tag" data-lang="en">Sponsorship</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════ EXPERIENCE ══════ -->
+  <section id="experience">
+    <p class="section-overline" data-lang="fr">Parcours professionnel</p>
+    <p class="section-overline" data-lang="en">Career path</p>
+    <h2 class="section-title" data-lang="fr">Expérience <em>professionnelle</em></h2>
+    <h2 class="section-title" data-lang="en">Professional <em>experience</em></h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date">2021 — 2025</div>
+        <div class="exp-content">
+          <h3 data-lang="fr">Senior Marketing Manager France</h3>
+          <h3 data-lang="en">Senior Marketing Manager France</h3>
+          <p class="exp-company" data-lang="fr">New Balance · Report direct au Country Manager France</p>
+          <p class="exp-company" data-lang="en">New Balance · Direct report to France Country Manager</p>
+          <ul class="exp-bullets">
+            <li data-lang="fr">Management de la team Marketing France (expansion de 4 à 12 pers.) — Brand marketing, Trade marketing, Sports marketing &amp; Tech Reps</li>
+            <li data-lang="en">Management of the France Marketing team (from 4 to 12 people) — Brand marketing, Trade marketing, Sports marketing &amp; Tech Reps</li>
+            <li data-lang="fr">Développement et exécution de la stratégie marketing France selon les guidelines NB Global, avec une approche omnicanale centrée sur le consommateur</li>
+            <li data-lang="en">Development and execution of France marketing strategy aligned with NB Global guidelines, with a consumer-centric omnichannel approach</li>
+            <li data-lang="fr">Développement de la notoriété spontanée (+5pts en 5 ans) et de l'engagement via des plans média impactants (earned &amp; paid) et des campagnes ciblées par catégorie (running, lifestyle, football…)</li>
+            <li data-lang="en">+5pts spontaneous brand awareness in 5 years through impactful earned &amp; paid media plans and category-specific campaigns (running, lifestyle, football…)</li>
+            <li data-lang="fr">Accompagnement de la croissance business (×3 entre 2020 et 2025) via une stratégie trade marketing omnicanal (Retail, WHS, Ecom) et une cohérence de l'image de marque sur toutes les catégories (lifestyle, running, football, tennis, basketball)</li>
+            <li data-lang="en">×3 business growth (2020–2025) through omnichannel trade marketing strategy (Retail, WHS, Ecom) and consistent brand image across all categories (lifestyle, running, football, tennis, basketball)</li>
+            <li data-lang="fr">Coordination de l'Hospitality New Balance lors des JO Paris 2024 avec les équipes NB Global/EMEA</li>
+            <li data-lang="en">Coordination of New Balance hospitality at Paris 2024 Olympics with NB Global/EMEA teams</li>
+            <li data-lang="fr">Gestion du budget marketing France (en M€, ×15 sur la période)</li>
+            <li data-lang="en">Management of France marketing budget (in M€, ×15 over the period)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2015 — 2020</div>
+        <div class="exp-content">
+          <h3 data-lang="fr">Marketing Manager France</h3>
+          <h3 data-lang="en">Marketing Manager France</h3>
+          <p class="exp-company">New Balance (Groupe Royer)</p>
+          <ul class="exp-bullets">
+            <li data-lang="fr">Définition et déploiement de la stratégie marketing France sur l'ensemble des catégories (running, lifestyle, football, tennis)</li>
+            <li data-lang="en">Definition and deployment of France marketing strategy across all categories (running, lifestyle, football, tennis)</li>
+            <li data-lang="fr">Lancement de la catégorie Football en France : définition et mise en place de la stratégie de lancement</li>
+            <li data-lang="en">Launch of the Football category in France: definition and implementation of the launch strategy</li>
+            <li data-lang="fr">Élaboration et mise en œuvre du plan média (print, web, OOH) et gestion des relations presse via l'agence Zmirov</li>
+            <li data-lang="en">Development and implementation of the media plan (print, web, OOH) and press relations management via Zmirov agency</li>
+            <li data-lang="fr">Définition de la stratégie sponsoring France (événements et athlètes) — partenariats run (Marseille-Cassis), tennis et football (LOSC, FC Nantes)</li>
+            <li data-lang="en">Definition of France sponsorship strategy (events and athletes) — run (Marseille-Cassis), tennis and football partnerships (LOSC, FC Nantes)</li>
+            <li data-lang="fr">Développement et coordination de la stratégie digitale (site Internet, réseaux sociaux, stratégie d'influence)</li>
+            <li data-lang="en">Development and coordination of digital strategy (website, social media, influencer strategy)</li>
+            <li data-lang="fr">Trade marketing running &amp; lifestyle — suivi du budget et management d'une équipe de 4 pers.</li>
+            <li data-lang="en">Running &amp; lifestyle trade marketing — budget management and 4-person team</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2010 — 2015</div>
+        <div class="exp-content">
+          <h3 data-lang="fr">Responsable Marketing Performance</h3>
+          <h3 data-lang="en">Performance Marketing Manager</h3>
+          <p class="exp-company">New Balance (Groupe Royer)</p>
+          <ul class="exp-bullets">
+            <li data-lang="fr">Définition et mise en place de la stratégie marketing performance France (running, trail)</li>
+            <li data-lang="en">Definition and implementation of France performance marketing strategy (running, trail)</li>
+            <li data-lang="fr">Élaboration et mise en œuvre du plan média (print, web) dans la presse running/sport</li>
+            <li data-lang="en">Development and implementation of the media plan (print, web) in running/sport press</li>
+            <li data-lang="fr">Définition de la stratégie sponsoring running (événements et athlètes) — gestion des partenariats 20km de Paris, Marseille-Cassis, EcoTrail</li>
+            <li data-lang="en">Definition of running sponsorship strategy (events and athletes) — management of 20km de Paris, Marseille-Cassis, EcoTrail partnerships</li>
+            <li data-lang="fr">Gestion des relations presse via l'agence Zmirov</li>
+            <li data-lang="en">Press relations management via Zmirov agency</li>
+            <li data-lang="fr">Trade marketing running (distribution spécialisée et généraliste) — management d'une équipe de 3 pers.</li>
+            <li data-lang="en">Running trade marketing (specialist and mass-market distribution) — 3-person team management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2005 — 2010</div>
+        <div class="exp-content">
+          <h3 data-lang="fr">Events Coordinator</h3>
+          <h3 data-lang="en">Events Coordinator</h3>
+          <p class="exp-company">New Balance</p>
+          <ul class="exp-bullets">
+            <li data-lang="fr">Négociation et mise en place de partenariats avec les événements phares de la marque</li>
+            <li data-lang="en">Negotiation and implementation of partnerships with the brand's flagship events</li>
+            <li data-lang="fr">20km de Paris · Marathon des Sables · Circuit des courses Féminines Odysséa</li>
+            <li data-lang="en">20km de Paris · Marathon des Sables · Odysséa Women's Race Circuit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2004 — 2005</div>
+        <div class="exp-content">
+          <h3 data-lang="fr">Assistante Marketing</h3>
+          <h3 data-lang="en">Marketing Assistant</h3>
+          <p class="exp-company" data-lang="fr">Fédération Française d'Athlétisme</p>
+          <p class="exp-company" data-lang="en">French Athletics Federation</p>
+          <ul class="exp-bullets">
+            <li data-lang="fr">Gestion de l'image des athlètes Elite : relations avec les marques partenaires (Samsung, Coca-Cola, Toyota) et gestion des sollicitations (séminaires, actions caritatives, presse)</li>
+            <li data-lang="en">Elite athlete image management: relations with partner brands (Samsung, Coca-Cola, Toyota) and handling of solicitations (seminars, charitable actions, press)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════ SKILLS ══════ -->
+  <section id="skills">
+    <p class="section-overline" data-lang="fr">Profil &amp; formation</p>
+    <p class="section-overline" data-lang="en">Profile &amp; education</p>
+    <h2 class="section-title" data-lang="fr">Compétences <em>&amp; background</em></h2>
+    <h2 class="section-title" data-lang="en">Skills <em>&amp; background</em></h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3 data-lang="fr">Compétences clés</h3>
+        <h3 data-lang="en">Core skills</h3>
+        <ul>
+          <li data-lang="fr">Leadership &amp; influence</li>
+          <li data-lang="en">Leadership &amp; influence</li>
+          <li data-lang="fr">Gestion partenariats &amp; ambassadeurs</li>
+          <li data-lang="en">Partnership &amp; ambassador management</li>
+          <li data-lang="fr">Conduite du changement</li>
+          <li data-lang="en">Change management</li>
+          <li data-lang="fr">Communication &amp; collaboration</li>
+          <li data-lang="en">Communication &amp; collaboration</li>
+          <li data-lang="fr">Organisation &amp; proactivité</li>
+          <li data-lang="en">Organisation &amp; proactivity</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3 data-lang="fr">Langues</h3>
+        <h3 data-lang="en">Languages</h3>
+        <ul>
+          <li data-lang="fr">Français — Langue maternelle</li>
+          <li data-lang="en">French — Native</li>
+          <li data-lang="fr">Anglais — Courant<br /><span style="color:var(--light);font-size:11px;">Pratique professionnelle quotidienne</span></li>
+          <li data-lang="en">English — Fluent<br /><span style="color:var(--light);font-size:11px;">Daily professional use</span></li>
+          <li data-lang="fr">Italien — Intermédiaire</li>
+          <li data-lang="en">Italian — Intermediate</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3 data-lang="fr">Formation</h3>
+        <h3 data-lang="en">Education</h3>
+        <ul>
+          <li data-lang="fr">ESC Toulouse — Master Marketing<br /><span style="color:var(--light);font-size:11px;">Spécialisation Sport · 2000–2004</span></li>
+          <li data-lang="en">ESC Toulouse — Master Marketing<br /><span style="color:var(--light);font-size:11px;">Sports specialisation · 2000–2004</span></li>
+          <li data-lang="fr">Prépa HEC — Lycée Pontonniers<br /><span style="color:var(--light);font-size:11px;">Strasbourg · 1998–2000</span></li>
+          <li data-lang="en">Preparatory class (HEC track)<br /><span style="color:var(--light);font-size:11px;">Strasbourg · 1998–2000</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3 data-lang="fr">Certification &amp; intérêts</h3>
+        <h3 data-lang="en">Certification &amp; interests</h3>
+        <ul>
+          <li>🎓 The AI Leadership Program</li>
+          <li data-lang="fr">🏃 Running — objectif Marathon NYC 2026</li>
+          <li data-lang="en">🏃 Running — goal: NYC Marathon 2026</li>
+          <li data-lang="fr">🍝 Cuisine italienne</li>
+          <li data-lang="en">🍝 Italian cooking</li>
+          <li data-lang="fr">🥾 Randonnée (Compostelle)</li>
+          <li data-lang="en">🥾 Hiking (Camino de Santiago)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CONTACT ══════ -->
+  <section id="contact">
+    <p class="section-overline" data-lang="fr">Travaillons ensemble</p>
+    <p class="section-overline" data-lang="en">Let's work together</p>
+    <h2 class="section-title" data-lang="fr">Me <em>contacter</em></h2>
+    <h2 class="section-title" data-lang="en">Get <em>in touch</em></h2>
+    <p class="contact-sub" data-lang="fr">
+      Ouverte aux opportunités — Head of Marketing, Sponsorship Manager ou Brand Director dans le sport, le retail sport ou les marques lifestyle.
+    </p>
+    <p class="contact-sub" data-lang="en">
+      Open to opportunities — Head of Marketing, Sponsorship Manager or Brand Director in sport, sports retail or lifestyle brands.
+    </p>
+    <div class="contact-links">
+      <a class="contact-item" href="tel:+33761884881">
+        <span>📞</span> +33 7 61 88 48 81
+      </a>
+      <a class="contact-item" href="mailto:c.boulanger@free.fr">
+        <span>✉️</span> c.boulanger@free.fr
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/claire-boulanger-marketing/" target="_blank">
+        <span>💼</span> LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer>© 2025 Claire Boulanger — Marketing, Brand &amp; Sponsorship Leader</footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.toggle('en', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+    }
+  </script>
+
+</body>
+</html>
